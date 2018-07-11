@@ -84,17 +84,15 @@ int main() {
   uint32_t map_size;
   uint32_t cnt = 0;
 
-  do {
-    mmax = 0;
-    map_size = get_map_size();
-    if (map_size == 0 || map_size > 4)
-      break;
+  mmax = 0;
+  map_size = get_map_size();
+  if (map_size == 0 || map_size > 4)
+    break;
 
-    get_map(map_size);
-    if (map_size > 2)
-      dfs(0, 0, map_size);
-    else
-      calc(map_size);
-    printf("%d\n", mmax);
-  } while(true);
+  get_map(map_size);
+  if (map_size > 2)
+    dfs(0, 0, map_size);
+  else
+    calc(map_size);
+  printf("%d\n", mmax);
 }
